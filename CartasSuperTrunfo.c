@@ -63,7 +63,7 @@ printf("Que comecem os jogos!\n");
     printf("Digite o Número de pontos turísticos: %i\n", pontos_turisticos1);
     printf("---------------------------------\n");
     densidade_populacao1 = populacao1 / area1;
-    printf("A densidade populacional é: %.2f hab/km²\n", &densidade_populacao1);
+    printf("A densidade populacional é: %.2f hab/km²\n", densidade_populacao1);
     pib_percapita1 = pib1/populacao1;
     printf("O PIB per capital da população é: %.2f \n", pib_percapita1);
 
@@ -107,7 +107,7 @@ printf("Que comecem os jogos!\n");
     printf("Digite o Número de pontos turísticos: %i\n", pontos_turisticos2);
     printf("---------------------------------\n");
     densidade_populacao2 = populacao2 / area2;
-    printf("A densidade populacional é: %.2f hab/km²\n", &densidade_populacao2);
+    printf("A densidade populacional é: %.2f hab/km²\n", densidade_populacao2);
     pib_percapita2 = pib2/populacao2;
     printf("O PIB per capital da população é: %.2f\n", pib_percapita2);
 
