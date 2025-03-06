@@ -3,26 +3,26 @@
 int  main()
 {
     // Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
-// Siga os comentários para implementar cada parte do desafio.
+//  Cadastro das Cartas
 
-printf("Desafio Super Trunfo - Países\n");
+printf("   \n"); 
 
-
-  char estado1[02], estado2[02];  //Estado representado por uma letra(A a H):
+    char estado1[02], estado2[02];  //Estado representado por uma letra(A a H):
     char codigo1[05], codigo2[05];  // Código da carta, composto pela letra do estado + número:
     char nome1[50], nome2[50];  //Nome da cidade:
     int populacao1, populacao2;  //População da cidade:
     float area1, area2;  //Área   da cidade em km²:
     float pib1, pib2;     // PIB da cidade
     int pontos_turisticos1, pontos_turisticos2;  // Número de pontos turísticos
-    
+    float densidade_populacao1, densidade_populacao2;
+    float pib_percapita1, pib_percapita2;
         
   // Cadrasto da primeira Carta
+printf("Boas-vindas ao Super Trunfo! Aqui, cada carta é uma chance de vitória.\n");
+printf("Mostre sua habilidade e derrote seus adversários!\n");
+printf("Que comecem os jogos!\n");
 
-
-    printf("\nCadastro das Cartas:\n");
+    printf("\nVamos começar cadastrando as cartas que iremos jogar:\n");
 
     printf("Cadastro da Carta 01:\n");
 
@@ -50,6 +50,7 @@ printf("Desafio Super Trunfo - Países\n");
     scanf("%i", &pontos_turisticos1);
 
     //Detalhes da Primeira Carta:
+    printf("   \n");
 
     printf("\nDetalhes da Carta01:\n");
 
@@ -57,14 +58,18 @@ printf("Desafio Super Trunfo - Países\n");
     printf("Digite o código da Carta: %s\n", codigo1);
     printf("Digite o Nome da Cidade: %s\n", nome1);
     printf("Digite a População da Cidade: %i habitantes\n", populacao1);
-    printf("Digite a Área da Cidade: %.2f km²\n", area1);
+    printf("Digite a Área da Cidade: %.2f bilhoões de reais km²\n", area1);
     printf("Digite o PIB: R$ %.2f\n", pib1);
     printf("Digite o Número de pontos turísticos: %i\n", pontos_turisticos1);
     printf("---------------------------------\n");
+    densidade_populacao1 = populacao1 / area1;
+    printf("A densidade populacional é: %.2f hab/km²\n", &densidade_populacao1);
+    pib_percapita1 = pib1/populacao1;
+    printf("O PIB per capital da população é: %.2f \n", pib_percapita1);
 
 
     // Cadrasto da segunda Carta 
-   
+    printf("   \n");
 
     printf("\nCadastro da Carta 02:\n");
 
@@ -98,20 +103,14 @@ printf("Desafio Super Trunfo - Países\n");
     printf("Digite o Nome da Cidade: %s\n", nome2);
     printf("Digite a População da Cidade: %d habitantes\n", populacao2);
     printf("Digite a Área da Cidade: %.2f km²\n", area2);
-    printf("Digite o PIB: R$ %.2f\n", pib2);
+    printf("Digite o PIB: R$ %.2f bilhoões de reais\n", pib2);
     printf("Digite o Número de pontos turísticos: %i\n", pontos_turisticos2);
     printf("---------------------------------\n");
+    densidade_populacao2 = populacao2 / area2;
+    printf("A densidade populacional é: %.2f hab/km²\n", &densidade_populacao2);
+    pib_percapita2 = pib2/populacao2;
+    printf("O PIB per capital da população é: %.2f\n", pib_percapita2);
 
+    return 0; //retorna verdadeiro 
 
-
-
-    // Exibindo as cartas cadastradas
-printf("Carta 1\n");
-printf("Carta 2\n");
-
-
-    return 0;
 }
-
-
-
