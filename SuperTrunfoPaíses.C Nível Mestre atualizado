@@ -1,0 +1,224 @@
+#include <stdio.h>
+
+int  main()
+{
+    // Desafio Super Trunfo - Países
+//  Cadastro das Cartas
+
+printf("   \n"); 
+
+    char estado1[02], estado2[02];  //Estado representado por uma letra(A a H):
+    char codigo1[05], codigo2[05];  // Código da carta, composto pela letra do estado + número:
+    char nome1[50], nome2[50];  //Nome da cidade:
+    int populacao1, populacao2;  //População da cidade:
+    float area1, area2;  //Área   da cidade em km²:
+    float pib1, pib2;     // PIB da cidade
+    int pontos_turisticos1, pontos_turisticos2;  // Número de pontos turísticos
+    float densidade_populacao1, densidade_populacao2;
+    float pib_percapita1, pib_percapita2;
+    float Super_Poder1, Super_Poder2;
+        
+  
+printf("Boas-vindas ao Super Trunfo! Aqui, cada carta é uma chance de vitória.\n");
+printf("Mostre sua habilidade e derrote seus adversários!\n");
+printf("Que comecem os jogos!\n");
+
+    printf("\nVamos começar cadastrando as cartas que iremos jogar:\n");
+
+    // Cadrasto da primeira Carta
+
+    printf("\nCadastro da Carta 01:\n");
+
+
+    printf("Digite a letra do estado (A a H):\n");
+    scanf(" %s", estado1);
+
+    printf("Digite o código da carta (letra do estado seguida de número, ex: A01):\n");
+    scanf("%s", codigo1);
+
+    printf("Digite o nome da cidade: \n");
+    scanf(" %s", nome1);
+
+    printf("Digite a população da cidade: \n");
+    scanf("%ld", &populacao1);
+
+    printf("Digite a área da cidade (em km²): \n");
+    scanf("%f", &area1);
+
+    printf("Digite o PIB da cidade: \n");
+    scanf("%f", &pib1);
+
+    printf("Digite o número de pontos turísticos da cidade: \n");
+    scanf("%i", &pontos_turisticos1);
+
+    printf("\n");
+
+     printf("\nParabéns, Primeira Carta Cadastrada com Sucesso!\n");
+
+    printf("\nVamos para o Cadastro da segunda Carta.\n");
+    
+    // Cadrasto da segunda Carta
+    printf("\nCadastro da Carta 02:\n");
+
+    printf("Digite a letra do estado (A a H): \n");
+    scanf(" %s", &estado2); 
+
+    printf("Digite o código da carta (letra do estado seguida de número, ex: A01):\n");
+    scanf("%s", &codigo2);
+
+    printf("Digite o nome da cidade: \n");
+    scanf(" %s", nome2);
+
+    printf("Digite a população da cidade: \n");
+    scanf("%ld", &populacao2);
+
+    printf("Digite a área da cidade (em km²): \n");
+    scanf("%f", &area2);
+
+    printf("Digite o PIB da cidade: \n");
+    scanf("%f", &pib2);
+
+    printf("Digite o número de pontos turísticos da cidade: \n");
+    scanf("%i",&pontos_turisticos2);
+     
+    printf("\n");
+
+    printf("Parabéns, Segunda Carta Cadastrada com Sucesso!\n");
+
+    printf("Detalhes da primeira Carta Cadastrada!\n"); 
+
+     //Detalhes da Primeira Carta:
+     printf("   \n");
+
+     printf("\nDetalhes da Carta01:\n");
+     printf("Digite a letra do Estado (A a H): %s\n", estado1);
+     printf("Digite o código da Carta: %s\n", codigo1);
+     printf("Digite o Nome da Cidade: %s\n", nome1);
+     printf("Digite a População da Cidade: %ld habitantes\n", populacao1);
+     printf("Digite a Área da Cidade: %.2f km²\n", area1);
+     printf("Digite o PIB: %.2f bilhoões de reais\n", pib1);
+     printf("Digite o Número de pontos turísticos: %i\n", pontos_turisticos1);
+     printf("---------------------------------\n");
+     densidade_populacao1 = populacao1 / area1;
+     printf("A densidade populacional é: %.2f habitantes/km²\n", densidade_populacao1);
+     pib_percapita1 = pib1/populacao1;
+     printf("O PIB per capital da população é: %.2f \n", pib_percapita1);
+     
+
+    //Detalhes da Segunda Carta:      
+
+    printf("\nDetalhes da Carta02:\n");
+
+    printf("Digite a letra do Estado (A a H): %s\n", estado2);
+    printf("Digite o código da Carta: %s\n", codigo2);
+    printf("Digite o Nome da Cidade: %s\n", nome2);
+    printf("Digite a População da Cidade: %ld habitantes\n", populacao2);
+    printf("Digite a Área da Cidade: %.2f km²\n", area2);
+    printf("Digite o PIB: R$ %.2f bilhões de reais\n", pib2);
+    printf("Digite o Número de pontos turísticos: %i\n", pontos_turisticos2);
+    printf("---------------------------------\n");
+    densidade_populacao2 = populacao2 / area2;
+    printf("A densidade populacional é: %.2f habitantes/km²\n", densidade_populacao2);
+    pib_percapita2 = pib2/populacao2;
+    printf("O PIB per capital da população é: %.2f\n", pib_percapita2);
+ 
+
+    printf("\n\n");
+
+    // calculando dados adicionais carta 1
+ densidade_populacao1 = (float) populacao1 / area1;
+ pib_percapita1 = (pib1 * 1e9) / (float) populacao1; // multipliquei por 1e9 para converter de bilhoes para reais
+
+
+ Super_Poder1 = populacao1 + area1 + pib1 + pontos_turisticos1 + pib_percapita1 + ( 1.0f / densidade_populacao1 ); // o super poder é a soma de todos atributos mais o inverso da densidade
+
+// calculando dados adicionais carta 2
+densidade_populacao2 = (float) populacao2 / area2;
+pib_percapita2 = (pib2 * 1e9) / (float) populacao2; // multipliquei por 1e9 para converter de bilhoes para reais
+
+
+ Super_Poder2 = populacao2 + area2 + pib2 + pontos_turisticos2 + pib_percapita2 + ( 1.0f / densidade_populacao2 ); // o super poder é a soma de todos atributos mais o inverso da densidade
+
+
+printf("Comparacao de Cartas:\n");
+
+printf("População Carta 1 (%s): %i Habitantes \n", nome1, (populacao1));
+printf("População Carta 2 (%s): %i Habitantes \n", nome2, (populacao2));
+
+if(populacao1 > populacao2) {
+    printf("Carta 1 (%s) Venceu!\n", nome1);
+}else if(populacao1 < populacao2) {
+    printf("Carta 2 (%s) Venceu!\n", nome2);
+}
+else 
+{ printf("Empate! Ambas as cartas têm a mesma população: %d\n");}
+
+printf("Área da Carta 1 (%s): %2.f km²\n", nome1, (area1));
+printf("Área da Carta 2 (%s): %2.f km²\n", nome2, (area2));
+
+if(area1 > area2) {
+    printf("Carta 1 (%s) Venceu!\n", nome1);
+}else if(area1 < area2) {
+    printf("Carta 2 (%s) Venceu!\n", nome2);
+}
+else 
+{ printf("Empate! Ambas as cartas têm a mesma Área:\n");}
+
+printf("PIB Carta 1 (%s): %.2f\n", nome1, (pib1));
+printf("PIB Carta 2 (%s): %.2f\n", nome2, (pib2));
+
+if(pib1 > pib2) 
+{printf("Carta 1 (%s) Venceu!\n", nome1);}
+else if(pib1 < pib2) 
+{printf("Carta 2 (%s) venceu!\n", nome2);}
+else
+ {printf("Empate! Ambas as cartas têm o mesmo PIB:\n");}
+
+ printf("Pontos Turísticos Carta 1 (%s): %i\n", nome1, (pontos_turisticos1));
+ printf("Pontos Turísticos Carta 2 (%s): %i\n", nome2, (pontos_turisticos2));
+ 
+ if (pontos_turisticos1 > pontos_turisticos2)
+  {printf("Carta 1 (%s) Venceu!\n", nome1);}
+    else if(pontos_turisticos1 < pontos_turisticos2)
+     {printf("Carta 2 (%s) Venceu!\n", nome2);}
+    else
+    {printf("Empate!  Ambas tem as Cartas têm a mesma quantidade de pontos turísticos!\n");}
+
+
+    densidade_populacao1 = populacao1 / area1;
+     printf("A densidade populacional é (%s): %.2f habitantes/km²\n",nome1, densidade_populacao1);
+
+     densidade_populacao2 = populacao2 / area2;
+    printf("A densidade populacional é (%s): %.2f habitantes/km²\n",nome2, densidade_populacao2);
+    
+   if(densidade_populacao1 < densidade_populacao2)
+   {printf("Carta 1 (%s) Venceu!\n", nome1);}
+   else if(densidade_populacao1 > densidade_populacao2)
+{printf("Carta 2 (%s) Venceu!\n", nome2);}
+
+pib_percapita1 = pib1 / populacao2;
+printf("O PIB per capital da população (%s) é :  R$ %.2f Bilhões de Reais\n", nome1, pib_percapita1);
+pib_percapita2 = pib2 * 1e9 / populacao2; 
+printf("O PIB per capital da população (%s) é : R$ %.2f Bilhões de Reais\n", nome2, pib_percapita2);
+
+
+if(pib_percapita1 > pib_percapita2)
+{printf("Carta 1 (%s) Venceu!\n", nome1);}
+else if(pib_percapita1 < pib_percapita2)
+{printf("Carta 2 (%s) Venceu!\n", nome2);}
+
+
+
+Super_Poder1 = populacao1 + area1 + pib1 + pontos_turisticos1 + pib_percapita1 + ( 1.0f / densidade_populacao1 ); // o super poder é a soma de todos atributos mais o inverso da densidade
+ printf("Super Poder da Carta 1 (%s) é o total de pontos: %.2f\n", nome1, Super_Poder1);
+ Super_Poder2 = populacao2 + area2 + pib2 + pontos_turisticos2 + pib_percapita2 + ( 1.0f / densidade_populacao2 ); // o super poder é a soma de todos atributos mais o inverso da densidade
+ printf("Super Poder da Carta 2 (%s) é o total de pontos: %.2f\n", nome2, Super_Poder2);
+
+ if (Super_Poder1 > Super_Poder2)
+ {printf("O Super poder da Carta (%s) 1 vence!\n", nome1, Super_Poder1);}
+ else if(Super_Poder1 < Super_Poder2)
+ {printf(" O Super poder da Carta (%s) 2 vence!\n", nome2, Super_Poder2);}
+ 
+printf("Você é o mestre do Super Trunfo! Todas as cartas são suas!\n");
+
+}
