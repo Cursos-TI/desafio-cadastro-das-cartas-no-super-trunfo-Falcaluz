@@ -107,7 +107,7 @@ printf("Que comecem os jogos!\n");
      printf("---------------------------------\n");
      densidade_populacao1 = populacao1 / area1;
      printf("A densidade populacional é: %.2f habitantes/km²\n", densidade_populacao1);
-     pib_percapita1 = pib1/populacao1;
+     pib_percapita1 = (pib1 * 1e9) / (float) populacao1;
      printf("O PIB per capital da população é: %.2f \n", pib_percapita1);
      
 
@@ -125,7 +125,7 @@ printf("Que comecem os jogos!\n");
     printf("---------------------------------\n");
     densidade_populacao2 = populacao2 / area2;
     printf("A densidade populacional é: %.2f habitantes/km²\n", densidade_populacao2);
-    pib_percapita2 = pib2/populacao2;
+    pib_percapita1 = (pib1 * 1e9) / (float) populacao2;
     printf("O PIB per capital da população é: %.2f\n", pib_percapita2);
  
 
