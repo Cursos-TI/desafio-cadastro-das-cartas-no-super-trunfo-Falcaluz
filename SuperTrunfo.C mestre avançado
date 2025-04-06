@@ -7,8 +7,8 @@ int  main()
 
 printf("   \n"); 
 
-    char estado1[02], estado2[02];  //Estado representado por uma letra(A a H):
-    char codigo1[05], codigo2[05];  // Código da carta, composto pela letra do estado + número:
+    char estado1[03], estado2[03];  //Estado representado por uma letra(A a H):
+    char codigo1[06], codigo2[06];  // Código da carta, composto pela letra do estado + número:
     char nome1[50], nome2[50];  //Nome da cidade:
     int populacao1, populacao2, opcao, opcao2, opcao3;  //População da cidade:
     float area1, area2;  //Área   da cidade em km²:
@@ -18,38 +18,40 @@ printf("   \n");
     float pib_percapita1, pib_percapita2;
     float Super_Poder1, Super_Poder2;
         
-  
-printf("Boas-vindas ao Super Trunfo Países! Aqui, cada carta é uma chance de vitória.\n");
+  // Introdução do jogo
+printf("\nBoas-vindas ao Super Trunfo Países! Aqui, cada carta é uma chance de vitória.\n");
 printf("Mostre sua habilidade e derrote seus adversários!\n");
-printf("Que comecem os jogos!\n");
+printf("\nQue comecem os jogos!\n");
 
-    printf("Menu Principal\n");
-    printf("1. Iniciar jogo\n");
-    printf("2. Ver Regras\n");
-    printf("3. Sair do Jogo\n");
-    printf("Escolha uma Opção:  \n");
-    scanf("%d", &opcao);
-    
+printf("\nMenu Principal\n");
+printf("1. Iniciar jogo\n");
+printf("2. Ver Regras\n");
+printf("3. Sair\n");
+printf("Escolha uma opção: ");
+scanf("%d", &opcao);
 
-    switch (opcao)
-    {
+switch (opcao) {
     case 1:
-      printf("Execução do Jogo Super Trunfo Países.\n");
-      break;
+        printf("\nVocê escolheu iniciar o jogo! Vamos às cartas!\n");
+        break;
     case 2:
-    printf("O jogador da vez olha a carta do topo do seu monte e escolhe um atributo (ex: população, PIB, área, IDH, etc.\n");
-      break;
-    case 3: 
-    printf("Sair do jogo.\n");
-    break;
-
+        printf("\nRegras:\n- Compare atributos como população, área, PIB, etc.\n- Vence quem tiver o maior valor no atributo escolhido, exceto para PIB per capita.\n- No caso do PIB per capita, vence quem tiver o **menor valor**!\n- Use o Super Poder para uma comparação total!\n");
+        return 0;
+    case 3:
+        printf("\nObrigado por jogar! Até a próxima.\n");
+        return 0;
     default:
-    printf("Opção inválida");
-      
-    }
+        printf("\nOpção inválida. Encerrando o jogo.\n");
+        return 0;
+}
     
-    printf("\nVamos começar cadastrando as cartas que iremos jogar:\n");
-    // Cadrasto da primeira Carta
+
+    // Cadastro das cartas
+    printf("\nHora de cadastrar as cartas!\n");
+
+
+
+
     printf("\nCadastro da Carta 01:\n");
     printf("Digite a letra do estado (A a H):\n");
     scanf(" %s", estado1);
@@ -57,8 +59,9 @@ printf("Que comecem os jogos!\n");
     scanf("%s", codigo1);
     printf("Digite o nome da cidade: \n");
     scanf(" %s", nome1);
+
     printf("Digite a população da cidade: \n");
-    scanf("%ld", &populacao1);
+    scanf("%d", &populacao1);
     printf("Digite a área da cidade (em km²): \n");
     scanf("%f", &area1);
     printf("Digite o PIB da cidade: \n");
@@ -80,7 +83,7 @@ printf("Que comecem os jogos!\n");
     printf("Digite o nome da cidade: \n");
     scanf(" %s", nome2);
     printf("Digite a população da cidade: \n");
-    scanf("%ld", &populacao2);
+    scanf("%d", &populacao2);
     printf("Digite a área da cidade (em km²): \n");
     scanf("%f", &area2);
     printf("Digite o PIB da cidade: \n");
@@ -100,7 +103,7 @@ printf("Que comecem os jogos!\n");
      printf("Digite a letra do Estado (A a H): %s\n", estado1);
      printf("Digite o código da Carta: %s\n", codigo1);
      printf("Digite o Nome da Cidade: %s\n", nome1);
-     printf("Digite a População da Cidade: %ld habitantes\n", populacao1);
+     printf("Digite a População da Cidade: %d habitantes\n", populacao1);
      printf("Digite a Área da Cidade: %.2f km²\n", area1);
      printf("Digite o PIB: %.2f bilhoões de reais\n", pib1);
      printf("Digite o Número de pontos turísticos: %i\n", pontos_turisticos1);
@@ -110,7 +113,7 @@ printf("Que comecem os jogos!\n");
      pib_percapita1 = (pib1 * 1e9) / (float) populacao1;
      printf("O PIB per capital da população é: %.2f \n", pib_percapita1);
      
-
+     
     //Detalhes da Segunda Carta:      
 
     printf("\nDetalhes da Carta02:\n");
@@ -118,7 +121,7 @@ printf("Que comecem os jogos!\n");
     printf("Digite a letra do Estado (A a H): %s\n", estado2);
     printf("Digite o código da Carta: %s\n", codigo2);
     printf("Digite o Nome da Cidade: %s\n", nome2);
-    printf("Digite a População da Cidade: %ld habitantes\n", populacao2);
+    printf("Digite a População da Cidade: %d habitantes\n", populacao2);
     printf("Digite a Área da Cidade: %.2f km²\n", area2);
     printf("Digite o PIB: R$ %.2f bilhões de reais\n", pib2);
     printf("Digite o Número de pontos turísticos: %i\n", pontos_turisticos2);
@@ -145,13 +148,14 @@ pib_percapita2 = (pib2 * 1e9) / (float) populacao2; // multipliquei por 1e9 para
 
  Super_Poder2 = populacao2 + area2 + pib2 + pontos_turisticos2 + pib_percapita2 + ( 1.0f / densidade_populacao2 ); // o super poder é a soma de todos atributos mais o inverso da densidade
 
-
+  // Comparação
+  printf("\nHora do duelo! Que vença a cidade mais poderosa!\n");
 
 printf("Muito Bem, Vamos para as Comparações!\n");
 printf("Digite a opção desejada:\n");
-printf("1. Comparar Cartas:\n");
-printf("2. Comparar por Atributo:\n");
-printf("3. Escolha uma Opção:  \n");
+printf("1. Comparar todos os atributos\n");
+printf("2. Escolher um atributo específico\n");
+printf("Escolha sua opção: ");
 scanf("%d", &opcao2);
 
 switch (opcao2)
@@ -200,7 +204,7 @@ else
     else if(pontos_turisticos1 < pontos_turisticos2)
      {printf("Carta 2 (%s) Venceu!\n", nome2);}
     else
-    {printf("Empate!  Ambas tem as Cartas têm a mesma quantidade de pontos turísticos!\n");}
+    {printf("Empate! Ambas as cartas têm a mesma quantidade de pontos turísticos!\n");}
 
 
     densidade_populacao1 = populacao1 / area1;
